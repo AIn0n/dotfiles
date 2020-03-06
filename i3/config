@@ -1,0 +1,203 @@
+set $mod Mod4
+set $TERM rxvt-unicode
+set $firstmonitor eDP-1
+set $secondmonitor  DP-2-3
+
+####FONTS####
+font pango:scientifica 8
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+####BINDS####
+bindsym $mod+Return exec $TERM
+bindsym $mod+q kill
+bindsym $mod+d exec j4-dmenu-desktop
+bindsym $mod+t exec thunar
+bindsym $mod+z exec firefox
+bindsym $mod+m exec scrot
+bindsym $mod+x exec $TERM -e ranger
+bindsym $mod+shift+x exec $TERM -e sudo poweroff
+bindsym $mod+shift+p exec $TERM -e python
+bindsym $mod+shift+s exec steam
+bindsym $mod+u exec $TERM -e calcurse
+bindsym $mod+c exec $TERM -e cava
+bindsym $mod+b bar hidden_state toggle
+bindsym $mod+y exec wicd-gtk
+bindsym $mod+g exec discord
+bindsym $mod+shift+n exec i3lock -i ~/i3wallpapers/i3lock.png
+
+###BRGIHTNESS###
+#bindsym $mod+p exec xbacklight -inc 10 # increase screen brightness
+#bindsym $mod+o exec xbacklight -dec 10 # decrease screen brightness
+
+###OUTPUTS###
+workspace $ws1 output $firstmonitor
+workspace $ws2 output $firstmonitor
+workspace $ws3 output $secondmonitor
+workspace $ws4 output $firstmonitor
+workspace $ws5 output $firstmonitor
+workspace $ws6 output $firstmonitor
+workspace $ws7 output $firstmonitor
+workspace $ws8 output $secondmonitor
+workspace $ws9 output $firstmonitor
+workspace $ws10 output $firstmonitor
+
+
+###SET COLORS###
+set $lblack #d98787
+set $black  #282828
+set $yellow #d75f87
+set $white  #ffffff
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $white  $yellow $white  $yellow   $yellow
+client.focused_inacitve $white  $yellow $white  $yellow   $yellow
+client.unfocused        $black  $black  $white  $lblack    $lblack
+client.urgent	        $black  $black  $white  $lblack    $lblack
+
+
+####BORDERS####
+smart_borders on
+smart_gaps on
+set $default_gaps_i 14
+set $default_gaps_o 0
+gaps inner $default_gaps_i
+gaps outer $default_gaps_o
+new_window pixel 5
+new_float pixel 5
+workspace $ws8 gaps inner 0
+workspace $ws8 gaps outer 0
+workspace $ws9 gaps inner 0
+workspace $ws9 gaps outer 0
+workspace $ws10 gaps inner 0
+workspace $ws10 gaps outer 0
+
+###VOLUME###
+bindsym $mod+equal exec --no-startup-id pactl set-sink-volume 0 +5% 
+bindsym $mod+minus exec --no-startup-id pactl set-sink-volume 0 -5%  
+
+bindsym $mod+o exec --no-startup-id pactl set-sink-volume 1 -5% 
+bindsym $mod+p exec --no-startup-id pactl set-sink-volume 1 +5%  
+
+####STARTUP####
+exec feh --bg-scale /home/szymi/i3wallpapers/wallpaper64.jpg /home/szymi/i3wallpapers/wallpaper2.jpg 
+exec conky -c ~/.conky/conkyrc-line
+exec ~/.screenlayout/screenlayout.sh
+
+#change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+i focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+i move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in hor/ver orientation
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+set $ws1 "1. "
+set $ws2 "2. "
+set $ws3 "3. "
+set $ws4 "4. "
+set $ws5 "5. "
+set $ws6 "6. "
+set $ws7 "7. "
+set $ws8 "8.GAPS FREE"
+set $ws9 "9.GAPS FREE"
+set $ws10 "10.GAPS FREE"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec i3-msg exit
+
+mode "resize" {
+	##WINDOWS RESIZE##
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym i resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+	##GAPS RESIZE##
+	bindsym equal gaps inner current plus 5
+	bindsym minus gaps inner current minus 5
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+bar 
+{
+	mode hide
+	hidden_state hide
+	modifier none
+	colors 
+	{
+		background	 $yellow
+		statusline	 $black
+		separator	 $vellow
+		
+	#	colorclass		border		bg		text
+		focused_workspace	$yellow		$black		$yellow
+		active_workspace	$yellow		$yellow		$black
+		inactive_workspace	$yellow		$yellow		$black
+	}
+	font pango: scientifica 8
+        status_command i3status
+}
