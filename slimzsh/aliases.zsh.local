@@ -1,0 +1,10 @@
+#ALIAS DANTE
+alias clangdante='clang -ggdb3 -std=c11 -x c -fdiagnostics-color -pedantic -Werror -Wall -Wextra -Wno-error=parentheses -Wno-parentheses -o'
+alias del='rm -rf'
+alias rename='mv'
+alias n='nvim'
+alias plz='sudo'
+alias py3='python3'
+
+#CAPS AS ESC
+setxkbmap -option caps:escape
