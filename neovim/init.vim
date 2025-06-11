@@ -1,9 +1,0 @@
-set number
-set textwidth=80
-set showmatch
-set hlsearch
-set smartcase
-set cindent
-set ruler
-set undolevels=1000
-set backspace=indent,eol,start
