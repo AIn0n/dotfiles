@@ -1,0 +1,39 @@
+{
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+        "editor.rulers": [
+            80
+        ],
+        "[c]": {
+            "editor.tabSize": 8,
+            "editor.insertSpaces": false
+        },
+        "[ruby]": {
+            "editor.tabSize": 2,
+            "editor.insertSpaces" : true
+        },
+        "[yaml]": {
+            "editor.tabSize": 2
+        },
+        "gitlens.hovers.currentLine.over": "line",
+        "gitlens.codeLens.enabled": false,
+        "gitlens.statusBar.enabled": false,
+        "[python]": {
+            "editor.formatOnType": true
+        },
+        "git.ignoreMissingGitWarning": true,
+        "svelte.ask-to-enable-ts-plugin": false,
+        "window.zoomLevel": 1,
+        "dart.flutterSdkPath": "/Users/szymongorka/inne/flutterSDK/flutter",
+        "python.createEnvironment.trigger": "off",
+        "jupyter.interactiveWindow.creationMode": "perFile",
+        "workbench.activityBar.location": "top",
+        "github.copilot.enable": {
+            "*": false,
+            "plaintext": false,
+            "markdown": false,
+            "scminput": false
+        },
+        "python.analysis.typeCheckingMode": "off",
+        "terminal.integrated.stickyScroll.enabled": false,
+        "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
+}
