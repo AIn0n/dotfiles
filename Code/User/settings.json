@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.colorTheme": "gruvboxConcoctis dark medium",
         "editor.rulers": [
             80
         ],
@@ -31,9 +31,11 @@
             "*": false,
             "plaintext": false,
             "markdown": false,
-            "scminput": false
+            "scminput": false,
+            "python": false
         },
         "python.analysis.typeCheckingMode": "off",
         "terminal.integrated.stickyScroll.enabled": false,
         "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
+        "editor.cursorSmoothCaretAnimation": "on",
 }
